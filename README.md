@@ -49,10 +49,8 @@ To run LiteStudio on your local machine:
 
 4. **Start the development**
     ```bash
-    npm run dev
-
-Note: For the Web File System Access API to function properly, the application must be run in a secure context (localhost or HTTPS) on a Chromium-based browser (Chrome, Edge, Brave).
+    npm run dev  
 
 ***
 
-Once you commit this to your GitHub repository, your project profile is officially complete. You have a live, deployed app, a clean codebase, and a highly technical README that sells your skills perfectly. Incredible work today!
+Note: For the Web File System Access API to function properly, the application must be run in a secure context (localhost or HTTPS) on a Chromium-based browser (Chrome, Edge, Brave).
