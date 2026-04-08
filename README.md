@@ -1,36 +1,35 @@
-# ⚡ LiteStudio: Zero-Backend Web IDE & Document Compiler
+# ⚡ LiteStudio: Zero-Backend Web IDE & Compiler
 
 ![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
 ![Vite](https://img.shields.io/badge/Vite-B73BFE?style=for-the-badge&logo=vite&logoColor=FFD62E)
-![JavaScript](https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E)
+![Babel](https://img.shields.io/badge/Babel-F9DC3E?style=for-the-badge&logo=babel&logoColor=black)
 
 LiteStudio is a professional-grade, zero-backend Integrated Development Environment (IDE) built entirely in the browser. 
 
-Unlike traditional web editors that rely on heavy backend servers or Docker containers to compile and execute code, LiteStudio utilizes an **in-memory document compiler** and the **Web File System Access API** to provide a secure, zero-latency local development experience natively within the client.
+Unlike traditional web editors that rely on heavy backend servers to compile code, LiteStudio utilizes an **in-memory document compiler**, live **Babel transpilation**, and the **Web File System Access API** to provide a secure, zero-latency local development experience natively within the client.
 
 ## 🚀 Architectural Highlights
 
-### 1. Zero-Backend Document Compiler
-Built a custom client-side web bundler utilizing Regular Expressions for AST (Abstract Syntax Tree) parsing. The compiler dynamically resolves nested file paths (e.g., `scripts/app.js`), extracts raw text from the virtual file system, and injects CSS/JS dependencies into a highly secure, sandboxed `<iframe>` for real-time execution.
+### 1. Live React & JSX Transpilation
+Built a custom client-side web bundler that dynamically resolves nested file paths and injects dependencies. The compiler automatically detects JavaScript files, injects the React & ReactDOM CDNs, and utilizes **Babel Standalone** to transpile JSX into pure JavaScript in real-time inside a secure iframe sandbox.
 
-### 2. $O(L)$ Trie-Based Auto-Complete Engine
-Replaced standard linear array filtering with a custom **Trie (Prefix Tree)** data structure. As the user types, the engine traverses the Trie in $O(L)$ time (where $L$ is the length of the current prefix), yielding highly efficient, real-time keyword and variable suggestions regardless of file size.
+### 2. Resizable Split-Pane UI & Iframe Sandboxing
+Engineered a custom, draggable split-screen interface allowing users to dynamically scale the editor and live preview panes. Implemented an "iframe mouse-trap" bypass using pointer-event state management to ensure flawless dragging across cross-origin boundaries.
 
-### 3. Single-Pass Lexical Analyzer
-Engineered a custom syntax highlighting engine from scratch without relying on heavyweight libraries like Monaco or CodeMirror. Utilized Regex named capture groups to guarantee mutual exclusivity of tokens, parsing HTML, CSS, and JavaScript in a single, highly performant pass.
-
-### 4. Recursive Virtual File System
-Integrated the native browser Web File System Access API to allow users to read, create, update, and delete files directly on their local hard drives through the browser. 
-* Implemented recursive React components to render nested folder structures.
+### 3. Recursive Virtual File System
+Integrated the native browser Web File System Access API to allow users to read, create, update, and delete files directly on their local hard drives. 
+* Implemented recursive React components to render deeply nested folder structures.
 * Built a custom multi-tab state manager that tracks file snapshots to provide real-time unsaved change indicators (`•`).
 
-## 🛠️ Technologies Used
+### 4. Modular, Enterprise-Grade Architecture
+Refactored a monolithic application into a highly modular React architecture, strictly separating UI Components (`/components`), Compiler utilities (`/utils`), and State Management orchestrators to ensure scalable and maintainable code.
 
-* **Frontend Framework:** React.js, Vite
-* **Core Languages:** JavaScript (ES6+), HTML5, CSS3
-* **Browser APIs:** Web File System Access API, HTML5 `<iframe>` Sandboxing (`allow-scripts`, `allow-modals`)
-* **Algorithms & Data Structures:** Trie (Prefix Tree), Regular Expressions (Lexing & AST Parsing)
-* **Deployment & CI/CD:** Vercel
+## 🛠️ Technologies & Capabilities
+
+* **Core Stack:** React.js, Vite, JavaScript (ES6+), HTML5, CSS3
+* **Compilers & Parsers:** Babel (JSX Transpilation), Regular Expressions (AST Parsing)
+* **Browser APIs:** Web File System Access API, HTML5 `<iframe>` Sandboxing
+* **Supported Environments:** Vanilla JS, React, Vue, Tailwind CSS, Three.js (WebGL)
 
 ## 💻 Running Locally
 
@@ -51,3 +50,9 @@ To run LiteStudio on your local machine:
 4. **Start the development**
     ```bash
     npm run dev
+
+Note: For the Web File System Access API to function properly, the application must be run in a secure context (localhost or HTTPS) on a Chromium-based browser (Chrome, Edge, Brave).
+
+***
+
+Once you commit this to your GitHub repository, your project profile is officially complete. You have a live, deployed app, a clean codebase, and a highly technical README that sells your skills perfectly. Incredible work today!
